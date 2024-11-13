@@ -1,6 +1,6 @@
 /* =================================================================== 
  *
- *  TripMate v1.0 Main Stylesheet
+ *  Dazzle v1.0 Main Stylesheet
  *  04-27-2017
  *  ------------------------------------------------------------------
  *
@@ -74,6 +74,7 @@
    color: #767676;
    margin: 0;
    padding: 0;
+   overflow-x: hidden;
  }
  
  
@@ -1084,7 +1085,7 @@
    content: "";
    height: 2px;
    width: 70px;
-   background-color: #39b54a;
+   background-color: #dec8ff;
    position: absolute;
    left: 0;
    bottom: 0;
@@ -1153,21 +1154,24 @@
  }
  
  .header-logo a {
-   display: block;
+   display: block; /* Ensures the element takes up space */
    margin: 0;
    padding: 0;
    outline: 0;
    border: none;
-   width: 97px;
-   height: 22px;
-   background: url("../images/logo.png") no-repeat center;
-   background-size: 97px 22px;
+   width: 97px; /* Fixed width */
+   height: 50px; /* Adjusted height to ensure visibility, adjust as needed */
+   background: url("../images/logo.png") no-repeat center center;
+   background-size: contain; /* Maintains aspect ratio */
    font: 0/0 a;
    text-shadow: none;
    color: transparent;
    -webkit-transition: all 0.5s ease-in-out;
    transition: all 0.5s ease-in-out;
+   border: 1px solid red; /* Temporary: visualize the boundary */
  }
+ 
+ 
  
  
  /* ------------------------------------------------------------------- 
@@ -2568,7 +2572,7 @@
  
  footer a,
  footer a:visited {
-   color: #39b54a;
+   color: #dec8ff;
  }
  
  footer a:hover,
@@ -2615,16 +2619,18 @@
    padding: 0;
    outline: 0;
    border: none;
-   width: 93px;
-   height: 21px;
+   width: 300px; /* Adjust as needed */
+   height: 100px; /* Adjust as needed */
    background: url("../images/logo.png") no-repeat center;
-   background-size: 93px 21px;
+   background-size: contain; /* Maintain aspect ratio */
    font: 0/0 a;
    text-shadow: none;
    color: transparent;
    -webkit-transition: all 0.5s ease-in-out;
    transition: all 0.5s ease-in-out;
  }
+ 
+ 
  
  .footer-social-list {
    font-size: 1.8rem;
@@ -2856,6 +2862,87 @@
      display: none;
    }
  }
+ 
+ #team {
+   padding: 60px 20px;
+   background-color: #f9f9f9;
+   text-align: center;
+ }
+ 
+ .intro-header {
+   font-size: 2.5em;
+   margin-bottom: 10px;
+ }
+ 
+ .lead {
+   font-size: 1.2em;
+   margin-bottom: 40px;
+   color: #555;
+ }
+ 
+ .team-members {
+   display: flex;
+   flex-direction: column; /* To keep team groups vertically stacked */
+   align-items: center;
+   gap: 40px;
+ }
+ 
+ .team-group {
+   display: flex;
+   gap: 20px; /* Space between cards */
+   justify-content: center;
+   flex-wrap: wrap; /* Wrap cards to a new row if the screen is narrow */
+   max-width: 1200px;
+   margin: 0 auto;
+   text-align: center;
+ }
+ 
+ .team-group h2 {
+   width: 100%;
+   font-size: 1.8em;
+   margin-bottom: 20px;
+   color: #333;
+ }
+ 
+ .team-card {
+   background: #ffffff;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   width: 200px;
+   padding: 20px;
+   text-align: center;
+   transition: transform 0.3s;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+ 
+ .team-card:hover {
+   transform: translateY(-10px);
+ }
+ 
+ .team-card img {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   margin-bottom: 15px;
+   object-fit: cover;
+ }
+ 
+ .team-card .name {
+   font-size: 1.2em;
+   font-weight: bold;
+   color: #333;
+   margin: 10px 0 5px;
+ }
+ 
+ .team-card .role {
+   font-size: 0.9em;
+   color: #777;
+ }
+ 
+ 
+ 
  
  
  /*# sourceMappingURL=main.css.map */
